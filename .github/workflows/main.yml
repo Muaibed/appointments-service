@@ -41,4 +41,4 @@ jobs:
         run: dotnet build backend/src/Appointments.Api/Appointments.Api.csproj --no-restore --configuration Release
 
       - name: Run tests
-        run: dotnet test backend/tests/Appointments.Tests/Appointments.Tests.csproj --no-build --verbosity normal
+        run: dotnet test backend/src/Appointments.Tests/Appointments.Tests.csproj --no-build --verbosity normal
