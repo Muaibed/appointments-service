@@ -65,6 +65,21 @@ Built using a **.NET 8 backend (Web API)** and an **Angular frontend**, followin
 
 ---
 
+### Database Setup
+Run the docker-compose.yml file
+```bash
+docker-compose up -d
+```
+
+Edit the following line at /Appointments.Api/appsettings.json based the parameters on docker-compose.yml (if changed)
+```bash
+"ConnectionStrings": {
+"Default": "Host=localhost;Port=5432;Database=appointments_dev;Username=postgres;Password=postgres"
+}
+```
+
+---
+
 ### Backend Setup
 
 ```bash
