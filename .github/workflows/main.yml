@@ -35,10 +35,10 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore appointments-service/backend/src/Appointments.Api/Appointments.Api.csproj
+        run: dotnet restore backend/src/Appointments.Api/Appointments.Api.csproj
 
       - name: Build
-        run: dotnet build appointments-service/backend/src/Appointments.Api/Appointments.Api.csproj --no-restore --configuration Release
+        run: dotnet build backend/src/Appointments.Api/Appointments.Api.csproj --no-restore --configuration Release
 
       - name: Run tests
-        run: dotnet test appointments-service/backend/tests/Appointments.Tests/Appointments.Tests.csproj --no-build --verbosity normal
+        run: dotnet test backend/tests/Appointments.Tests/Appointments.Tests.csproj --no-build --verbosity normal
