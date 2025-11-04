@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-appointments-list',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: `./appointments-list.html`
+  templateUrl: `./appointments-list.html`,
+  styleUrls: ['../../app.scss']
 })
 export class AppointmentsListComponent implements OnInit {
   appointments: Appointment[] = [];
@@ -26,7 +27,6 @@ export class AppointmentsListComponent implements OnInit {
   ngOnInit() {
     this.service.getAppointments().subscribe((data: any) => this.appointments = data);
 
-    // Load all appointments initially
     this.loadAppointments();
     this.loadDoctors();
     this.loadPatients();
@@ -41,15 +41,14 @@ export class AppointmentsListComponent implements OnInit {
   }
 
   loadAppointments() {
-  // Build query params based on filters
-  const params: any = {};
-  if (this.filters.doctorId) params.doctorId = this.filters.doctorId;
-  if (this.filters.status) params.status = this.filters.status;
-  if (this.filters.date) params.date = this.filters.date;
+    const params: any = {};
+    if (this.filters.doctorId) params.doctorId = this.filters.doctorId;
+    if (this.filters.status) params.status = this.filters.status;
+    if (this.filters.date) params.date = this.filters.date;
 
-  this.service.getAppointments(params).subscribe((data: any) => {
-    this.appointments = data;
-    });
+    this.service.getAppointments(params).subscribe((data: any) => {
+      this.appointments = data;
+      });
   }
 
   applyFilters() {

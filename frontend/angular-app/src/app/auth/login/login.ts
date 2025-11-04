@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-login',
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './login.html'
+  templateUrl: './login.html',
+  styleUrls: ['../../app.scss']
 })
 export class LoginComponent {
   username = '';

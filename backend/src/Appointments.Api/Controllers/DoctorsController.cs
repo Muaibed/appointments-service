@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Appointments.Api.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class DoctorsController : ControllerBase

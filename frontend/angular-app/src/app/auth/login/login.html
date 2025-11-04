@@ -1,7 +1,49 @@
-<h2>Login</h2>
-<form (ngSubmit)="login()">
-  <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
-  <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
-  <button type="submit">Login</button>
-</form>
-<p *ngIf="error">{{ error }}</p>
+<div class="container center">
+  <div class="page-center">
+    <div style="justify-items: center;">
+      <header class="header">
+        <h2>Login</h2>
+      </header>
+
+      <form class="form-select" (ngSubmit)="login()">
+        <div style="width: 40%;">
+          <div class="select-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter username"
+              [(ngModel)]="username"
+              name="username"
+              required
+              style="height: 30px;"
+            />
+          </div>
+
+          <div class="select-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              style="height: 30px;"
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="apply-btn long-btn">
+              Login
+            </button>
+          </div>
+
+          <p *ngIf="error" style="color: #dc3545; text-align: center; margin-top: 10px;">
+            {{ error }}
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

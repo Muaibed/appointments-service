@@ -8,7 +8,8 @@ import { PatientsService, Patient } from '../patients';
   selector: 'app-patient-form',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: `./patient-form.html`
+  templateUrl: `./patient-form.html`,
+  styleUrls: ['../../app.scss']
 })
 export class PatientsFormComponent implements OnInit {
   patient: Patient = { id: 0, fullName: '', email: '', dateOfBirth: '' };

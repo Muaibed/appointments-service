@@ -1,25 +1,32 @@
-<h2>Doctors</h2>
-<button routerLink="/doctors/new">+ New Doctor</button>
+<div class="container">
+  <header class="header">
+    <h2>Doctors</h2>
+    <button class="new-btn" routerLink="/doctors/new">+ New Doctor</button>
+  </header>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Full Name</th>
-      <th>Specialty</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let doctor of doctors">
-      <td>{{ doctor.id }}</td>
-      <td>{{ doctor.fullName }}</td>
-      <td>{{ doctor.specialty }}</td>
-      <td>{{ doctor.email }}</td>
-      <td>
-        <button [routerLink]="['/doctors/edit', doctor.id]">Edit</button>
-        <button (click)="delete(doctor.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Specialty</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors">
+          <td>{{ doctor.id }}</td>
+          <td>{{ doctor.fullName }}</td>
+          <td>{{ doctor.specialty }}</td>
+          <td>{{ doctor.email }}</td>
+          <td class="actions">
+            <button class="edit-btn" [routerLink]="['/doctors/edit', doctor.id]">Edit</button>
+            <button class="delete-btn" (click)="delete(doctor.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

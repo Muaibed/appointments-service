@@ -1,9 +1,55 @@
-<h2>{{ isEdit ? 'Edit' : 'New' }} Doctor</h2>
+<div class="container center">
+  <div class="page-center">
+    <div style="justify-items: center;">
+      <header class="header">
+        <h2>{{ isEdit ? 'Edit' : 'New' }} Doctor</h2>
+      </header>
 
-<form (ngSubmit)="save()">
-  <input type="number" placeholder="ID" [(ngModel)]="doctor.id" name="id" required>
-  <input type="text" placeholder="Full Name" [(ngModel)]="doctor.fullName" name="fullName" required>
-  <input type="text" [(ngModel)]="doctor.specialty" name="specialty" required>
-  <input type="email" placeholder="Email" [(ngModel)]="doctor.email" name="email" required>
-  <button type="submit">Save</button>
-</form>
+      <form class="form-select" (ngSubmit)="save()">
+        <div style="width: 60%;">
+          <div class="select-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              placeholder="Enter full name"
+              [(ngModel)]="doctor.fullName"
+              name="fullName"
+              required
+            />
+          </div>
+
+          <div class="select-group">
+            <label for="specialty">Specialty</label>
+            <input
+              type="text"
+              id="specialty"
+              placeholder="Enter specialty"
+              [(ngModel)]="doctor.specialty"
+              name="specialty"
+              required
+            />
+          </div>
+
+          <div class="select-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter email"
+              [(ngModel)]="doctor.email"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="apply-btn long-btn">
+              {{ isEdit ? 'Update' : 'Save' }} Doctor
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

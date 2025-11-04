@@ -9,7 +9,8 @@ import { AppointmentsService, Appointment } from '../appointments';
   selector: 'app-appointment-form',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: `./appointment-form.html`
+  templateUrl: `./appointment-form.html`,
+  styleUrls: ['../../app.scss']
 })
 export class AppointmentsFormComponent implements OnInit {
   appointment: Appointment = { id: 0, doctorId: 0, doctorName: '', patientId: 0, patientName: '', date: '', status: '' };

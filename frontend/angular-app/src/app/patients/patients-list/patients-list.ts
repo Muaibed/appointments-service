@@ -7,7 +7,8 @@ import { PatientsService, Patient } from '../patients';
   selector: 'app-patients-list',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: `./patients-list.html`
+  templateUrl: `./patients-list.html`,
+  styleUrls: ['../../app.scss']
 })
 export class PatientsListComponent implements OnInit {
   patients: Patient[] = [];
