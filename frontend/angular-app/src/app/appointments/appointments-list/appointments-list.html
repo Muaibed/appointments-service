@@ -1,0 +1,52 @@
+<h2>Appointments</h2>
+<button routerLink="/appointments/new">+ New Appointment</button>
+
+<form (ngSubmit)="applyFilters()">
+  <!-- Doctor filter -->
+  <label>Doctor</label>
+  <select [(ngModel)]="filters.doctorId" name="doctorId">
+    <option [ngValue]="null">All</option>
+    <option *ngFor="let doc of doctors" [ngValue]="doc.id">{{ doc.fullName }}</option>
+  </select>
+
+  <!-- Status filter -->
+  <label>Status</label>
+  <select [(ngModel)]="filters.status" name="status">
+    <option value="">All</option>
+    <option value="Scheduled">Scheduled</option>
+    <option value="Completed">Completed</option>
+    <option value="Cancelled">Cancelled</option>
+  </select>
+
+  <!-- Date filter -->
+  <label>Date</label>
+  <input type="date" [(ngModel)]="filters.date" name="date">
+
+  <button type="submit">Apply Filters</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Doctor</th>
+      <th>Patient</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.id }}</td>
+      <td>{{ appointment.doctorName }}</td>
+      <td>{{ appointment.patientName }}</td>
+      <td>{{ appointment.date | date:'short' }}</td>
+      <td>{{ appointment.status }}</td>
+      <td>
+        <button [routerLink]="['/appointments/edit', appointment.id]">Edit</button>
+        <button (click)="delete(appointment.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

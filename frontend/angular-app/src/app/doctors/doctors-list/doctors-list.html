@@ -1,0 +1,25 @@
+<h2>Doctors</h2>
+<button routerLink="/doctors/new">+ New Doctor</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Specialty</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{ doctor.id }}</td>
+      <td>{{ doctor.fullName }}</td>
+      <td>{{ doctor.specialty }}</td>
+      <td>{{ doctor.email }}</td>
+      <td>
+        <button [routerLink]="['/doctors/edit', doctor.id]">Edit</button>
+        <button (click)="delete(doctor.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

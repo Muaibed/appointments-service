@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+.vs/
+.env
+node_modules/
+frontend/angular-app/dist/
+*.db

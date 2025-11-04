@@ -1,0 +1,9 @@
+<h2>{{ isEdit ? 'Edit' : 'New' }} Doctor</h2>
+
+<form (ngSubmit)="save()">
+  <input type="number" placeholder="ID" [(ngModel)]="doctor.id" name="id" required>
+  <input type="text" placeholder="Full Name" [(ngModel)]="doctor.fullName" name="fullName" required>
+  <input type="text" [(ngModel)]="doctor.specialty" name="specialty" required>
+  <input type="email" placeholder="Email" [(ngModel)]="doctor.email" name="email" required>
+  <button type="submit">Save</button>
+</form>
