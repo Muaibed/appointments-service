@@ -124,7 +124,7 @@ dotnet test
 ---
 
 ## ERD Diagram
-
+<img src="images/ERD.png" alt="ERD" width="600"/>
 
 ---
 
@@ -135,4 +135,64 @@ This project includes an automated CI pipeline that runs on every push or pull r
 ---
 
 ## Screenshots
+
+<img src="images/login.png" alt="Login" width="600"/>
+
+*Login Page*
+
+<br><br>
+
+<img src="images/appointments-list.png" alt="Appointments" width="600"/>
+
+*Appointments List*
+
+<br><br>
+
+<img src="images/filter-by-doctorname.png" alt="FilterByName" width="600"/>
+
+*Filter Appointments By Doctor Name*
+
+<br><br>
+
+<img src="images/filter-by-status.png" alt="FilterByStatus" width="600"/>
+
+*Filter Appointments By Status*
+
+<br><br>
+
+<img src="images/filter-by-date.png" alt="FilterByDate" width="600"/>
+
+*Filter Appointments By Date*
+
+<br><br>
+
+<img src="images/appointment-form.png" alt="Appointment" width="600"/>
+
+*Appointment Form*
+
+<br><br>
+
+<img src="images/doctors-list.png" alt="Doctors" width="600"/>
+
+*Doctors List*
+
+<br><br>
+
+<img src="images/doctor-form.png" alt="Doctor" width="600"/>
+
+*Doctor Form*
+
+<br><br>
+
+<img src="images/patients-list.png" alt="Patients" width="600"/>
+
+*Patients List*
+
+<br><br>
+
+<img src="images/patient-form.png" alt="Doctors" width="600"/>
+
+*Patient Form*
+
+<br><br>
 
