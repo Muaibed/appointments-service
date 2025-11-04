@@ -8,6 +8,7 @@ using System.Text;
 using Appointments.Infrastructure.Data;
 using Appointments.Core.Entities;
 using Appointments.Core.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Appointments.Api.Controllers

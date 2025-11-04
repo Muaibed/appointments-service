@@ -4,6 +4,7 @@ using Appointments.Core.Entities;
 using Appointments.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Appointments.Api.Controllers;
 
