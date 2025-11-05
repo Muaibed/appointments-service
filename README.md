@@ -94,6 +94,15 @@ The API available at:
 http://localhost:5004
 ```
 
+If the API is running on another port then change this line
+```bash
+nano frontend/angular-app/src/environment/environment.ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:<PORT>/api'
+};
+```
+
 You can explore all endpoints via Swagger UI at:
 ```bash
 https://localhost:5004/swagger
@@ -109,6 +118,13 @@ ng serve
 The frontend available at:
 ```bash
 http://localhost:4200
+```
+If the frontend is running on another port then change this line 
+```bash
+nano backend/src/Appointments.Api/appsettings.json
+{
+   "FrontendUrl": "http://localhost:<PORT>",
+}
 ```
 
 ---
@@ -150,6 +166,31 @@ This project includes an automated CI pipeline that runs on every push or pull r
 ---
 
 ## Screenshots
+
+<img src="images/token.png" alt="Token" width="600"/>
+
+*Getting the Token in Swagger UI*
+
+<br><br>
+
+<img src="images/unauthorized-swagger.png" alt="Unauthorized-Swagger" width="600"/>
+
+*Trying to get the Appointments without Authorization*
+
+<br><br>
+
+
+<img src="images/authorize-swagger.png" alt="Authorize-Swagger" width="600"/>
+
+*Authorization using the Generated Token in Swaager UI*
+
+<br><br>
+
+<img src="images/appointments-swagger.png" alt="Appointments-Swagger" width="600"/>
+
+*Appointments in Swagger UI after Authorization*
+
+<br><br>
 
 <img src="images/login.png" alt="Login" width="600"/>
 
