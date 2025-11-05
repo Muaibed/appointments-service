@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environment/environment';
 
 export interface Appointment {
   id: number;
@@ -14,8 +15,8 @@ export interface Appointment {
 
 @Injectable({ providedIn: 'root' })
 export class AppointmentsService {
-  private baseUrl = 'http://localhost:5004/api'
-  private apiUrl = `${this.baseUrl}/appointments`;
+  private apiUrl = `${environment.apiUrl}`;
+  private appointmentsUrl = `${this.apiUrl}/appointments`;
 
   constructor(private http: HttpClient) {}
 
@@ -34,30 +35,30 @@ export class AppointmentsService {
       }
     }
 
-    return this.http.get<Appointment[]>(this.apiUrl, { params });  
+    return this.http.get<Appointment[]>(this.appointmentsUrl, { params });  
   }
 
   getAppointment(id: number): Observable<Appointment> {
-    return this.http.get<Appointment>(`${this.apiUrl}/${id}`);
+    return this.http.get<Appointment>(`${this.appointmentsUrl}/${id}`);
   }
 
   createAppointment(appointment: Appointment): Observable<Appointment> {
-    return this.http.post<Appointment>(this.apiUrl, appointment, { headers: { 'Content-Type': 'application/json' }});
+    return this.http.post<Appointment>(this.appointmentsUrl, appointment, { headers: { 'Content-Type': 'application/json' }});
   }
 
   updateAppointment(id: number, appointment: Appointment): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}`, appointment);
+    return this.http.put<void>(`${this.appointmentsUrl}/${id}`, appointment);
   }
 
   deleteAppointment(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.appointmentsUrl}/${id}`);
   }
 
   getDoctors(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/doctors`);
+    return this.http.get<any[]>(`${this.apiUrl}/doctors`);
   }
 
   getPatients(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/patients`);
+    return this.http.get<any[]>(`${this.apiUrl}/patients`);
   }
 }

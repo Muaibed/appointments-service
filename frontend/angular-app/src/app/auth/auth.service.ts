@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { environment } from '../../environment/environment';
 
 interface LoginResponse {
   token: string;
@@ -10,12 +11,12 @@ interface LoginResponse {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://localhost:5004/api/auth';
+  private authUrl = `${environment.apiUrl}/auth`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   login(username: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { username, password })
+    return this.http.post<LoginResponse>(`${this.authUrl}/login`, { username, password })
       .pipe(tap(res => localStorage.setItem('token', res.token)));
   }
 
